@@ -195,10 +195,20 @@ function queryBot(text) {
         success: function(data) {
             botToBot(data.result.action,data.result.fulfillment.speech);
             insertChat("jarvis", data.result.fulfillment.speech);
-            var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
-            window.speechSynthesis.speak(msg);
+			var msg = new SpeechSynthesisUtterance();
+			var voices = window.speechSynthesis.getVoices();
+			msg.lang = "en-GB";
+			msg.voice = voices[3];
+			msg.text = data.result.fulfillment.speech;
+			speechSynthesis.speak(msg);
         },
         error: function() {
+			var msg = new SpeechSynthesisUtterance();
+			var voices = window.speechSynthesis.getVoices();
+			msg.lang = "en-GB";
+			msg.voice = voices[2];
+			msg.text="Sorry Jarvis has faced some issues! Please try again later";
+			speechSynthesis.speak(msg);
             insertChat("jarvis", "Sorry Jarvis has faced some issues! Please try again later");
         }
     });
@@ -222,14 +232,24 @@ function botToBot(action,fulfillmentText) {
             sessionId: SESSIONID
         }),
         success: function(data) {
-            queryBot(data.result.fulfillment.speech)
+        queryBot(data.result.fulfillment.speech)
 	    insertChat(bot, data.result.fulfillment.speech);
-	    var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
-	    window.speechSynthesis.speak(msg);
+	    var msg = new SpeechSynthesisUtterance();
+			var voices = window.speechSynthesis.getVoices();
+			msg.lang = "en-US";
+			msg.voice = voices[1];
+			msg.text = data.result.fulfillment.speech;
+			speechSynthesis.speak(msg);
             
 			},
         error: function() {
             insertChat("Mr Mule", "Sorry Mr Mule Bot has faced some issues! Please try again later");
+			var msg = new SpeechSynthesisUtterance();
+			var voices = window.speechSynthesis.getVoices();
+			msg.lang = "en-US";
+			msg.voice = voices[1];
+			msg.text = data.result.fulfillment.speech;
+			speechSynthesis.speak(msg);
             setTimeout('', 10000);
 			}
 		});
