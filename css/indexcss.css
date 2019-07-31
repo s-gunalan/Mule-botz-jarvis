@@ -15,10 +15,11 @@ src:url('fonts/Spantaran (DEMO).otf');
 body{
 font-family: "Trebuchet MS";
 font-size:15px;
-background:url('images/dark-squares.png');
+background-image:linear-gradient(black,transparent,transparent,black),url('images/cot-earth.jpg');
 color:white;
 background-repeat: repeat;
 background-size:cover;
+
 #background-position:-65vw;
 overflow:hidden; 
 }
@@ -32,9 +33,9 @@ font-size:15px;
 height:12vh;
 position:fixed;
 width:100%;
-text-align:left;
+margin-top:2vw;
+text-align:center;
 font-family:'headlineItalic';
-background: linear-gradient(black,black,transparent);
 }
 #tagline{
 font-family:'tagline';
@@ -80,7 +81,6 @@ width:9vw;
 width:8vw;
 }
 iframe{
-	background: linear-gradient(transparent,transparent,transparent,black);	
 	margin-top:12vh;
 	height:83vh;
 	width:74.7vw;
@@ -119,7 +119,7 @@ color:white;
 }
 
 .title{
-font-size:3vh;
+font-size:10vh;
 font-family: "CASTELLAR";
 margin-top: 42vh;
 margin-left: 30vw;
@@ -134,15 +134,15 @@ text-align:center;
 .frame{
     z-index:10000;
     overflow:hidden;
-    padding:0;
+    padding:2;
     position:fixed;
-    right:0px;
+    right:30px;
     bottom:5vh;
     font-size:15px;
 	width:100px;
 	border-radius:100px;
-	box-shadow: inset 0 0px 10px 0px grey, 0 1px 2px 0 white;	
-	background-color:linear-gradient(black,transparent,transparent);
+	box-shadow: 20px 20px 50px 15px black;
+	background-color:linear-gradient(transparent,transparent);
 }
 
 .panel-primary {
@@ -174,7 +174,7 @@ margin-bottom:0px;
 .innerframe{
 margin-top:20px;
 z-index:1;
-background:linear-gradient(transparent,black);
+background:linear-gradient(transparent,transparent,black);
 height:60vh;
     opacity:'0';
 }
@@ -264,8 +264,7 @@ text-align:center;
 position:fixed;
 margin-top:95vh;
 width:100%;
-background:linear-gradient(black,black,transparent);
-font-size:10px;
+font-size:15px;
 }
 html, body{
     height: 100%;

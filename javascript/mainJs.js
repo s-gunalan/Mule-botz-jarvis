@@ -222,7 +222,7 @@ function botToBot(action,fulfillmentText) {
             sessionId: SESSIONID
         }),
         success: function(data) {
-            queryBot(data.result.fulfillment.speech)
+        queryBot(data.result.fulfillment.speech)
 	    insertChat(bot, data.result.fulfillment.speech);
 	    var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
 	    window.speechSynthesis.speak(msg);
