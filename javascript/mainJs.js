@@ -92,7 +92,19 @@ function insertChat(who, text) {
             '</div>' + '</small>  </p>' + 
             '</li>';
     }
-	else if (who == "Mr Mule") {
+	
+    else if (who =="jarvis") {
+        control = '<li style="width:100%;align:right;">' +
+            '<div class="msj macro">' +
+            '<div class="text">' +
+            '<p style=>' + text + '</p>' +
+            '<p><small>' + date + '</small></p>' +
+            '</div>' +
+            '</div>' +
+            '</li>';
+    }
+	
+	else if (who == "Mr_Mule") {
 
         control = '<li style="width:100%;float:right;">' +
             '<div class="msj-rta-mule macro">' +
@@ -102,14 +114,15 @@ function insertChat(who, text) {
             '</div>' + '</small>  </p>' + '<span class="i-circle-mule">MB</span>'  + 
             '</li>';
     }
-    else if (who =="jarvis") {
-        control = '<li style="width:100%;align:right;">' +
-            '<div class="msj macro">' +
-            '<div class="text">' +
-            '<p style=>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
-            '</div>' +
-            '</div>' +
+	
+	else if (who == "DevOps") {
+
+        control = '<li style="width:100%;float:right;">' +
+            '<div class="msj-rta-devops macro">' +
+            '<div class="text text-r">' +  
+            '<p>' + text + '</p>' + 
+            '<p><small>' + date + 
+            '</div>' + '</small>  </p>' + '<span class="i-circle-devops">MB</span>'  + 
             '</li>';
     }
     else {
