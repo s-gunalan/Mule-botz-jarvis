@@ -86,10 +86,20 @@ function insertChat(who, text) {
 
         control = '<li style="width:100%;float:right;">' +
             '<div class="msj-rta macro">' +
-            '<div class="text text-r">' +
-            '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
-            '</div>' +
+            '<div class="text text-r">' +  
+            '<p>' + text + '</p>' + 
+            '<p><small>' + date + 
+            '</div>' + '</small>  </p>' + 
+            '</li>';
+    }
+	else if (who == "Mr Mule") {
+
+        control = '<li style="width:100%;float:right;">' +
+            '<div class="msj-rta-mule macro">' +
+            '<div class="text text-r">' +  
+            '<p>' + text + '</p>' + 
+            '<p><small>' + date + 
+            '</div>' + '</small>  </p>' + '<span class="i-circle-mule">MB</span>'  + 
             '</li>';
     }
     else if (who =="jarvis") {
@@ -103,11 +113,11 @@ function insertChat(who, text) {
             '</li>';
     }
     else {
-        control = '<li style="width:100%;float:right; background:blue;color:yellow;">' +
-            '<div class="msj-rta macro">' +
-            '<div class="text text-r">' +
+        control = '<li style="width:100%;float:right; ">' +
+            '<div class="msj-rta-devops macro" >' +
+            '<div class="text text-r">' + 
             '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' +
+            '<p><small>' + date + '</small></p>' + '<span class="i-circle-others">DO</span>'
             '</div>' +
             '</li>';
     }
@@ -197,7 +207,7 @@ function queryBot(text) {
 			var msg = new SpeechSynthesisUtterance();
 			msg.text = data.result.fulfillment.speech;
 			speechSynthesis.speak(msg);
-			setTimeout(botToBot(data.result.action,data.result.fulfillment.speech),5000);
+			setTimeout(botToBot(data.result.action,data.result.fulfillment.speech),10000);
         },
         error: function() {
 			var msg = new SpeechSynthesisUtterance();
@@ -253,7 +263,7 @@ function botToBot(action,fulfillmentText) {
             
 			},
         error: function() {
-            insertChat("Mr Mule", "Sorry Mr Mule Bot has faced some issues! Please try again later");
+            insertChat(bot, "Sorry Mr Mule Bot has faced some issues! Please try again later");
 			var msg = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			msg.lang = "en-US";

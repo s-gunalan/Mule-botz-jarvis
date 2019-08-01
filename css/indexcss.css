@@ -126,6 +126,42 @@ color:white;
     float:left;background:#101010;
 	box-shadow: inset 0px 4px 4px 0 grey, 0 1px 2px 0 grey;	
 }
+.msj-rta-mule{
+    float:right;background:#00288b;text-align:right;
+	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;	
+}
+.msj-rta-devops{
+    float:right;background:#224634;
+	box-shadow: inset 0px 4px 4px 0 grey, 0 1px 2px 0 grey;	
+}
+.i-circle-jarvis {
+    background: brown;
+    border-radius: 50%;
+	width:30px;
+	height:30px;
+	text-align:center;
+    font-size: 20px;
+}
+
+.i-circle-mule {
+    background: radial-gradient(blue,black);
+    border-radius: 50%;
+	width:40px;
+	height:30px;
+	float:right;
+	text-align:center;
+    font-size: 20px;
+}
+.i-circle-devops {
+    background: radial-gradient(yellow,yellow,black);
+    border-radius: 50%;
+	width:40px;
+	height:30px;
+	float:right;
+	color:black;
+	text-align:center;
+    font-size: 20px;
+}
 
 .title{
 font-size:10vh;
