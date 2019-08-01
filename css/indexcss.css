@@ -88,9 +88,9 @@ width:9vw;
 width:8vw;
 }
 iframe{
-	margin-top:15vh;
-	height:83vh;
-	width:74.7vw;
+	margin-top:16vh;
+	height:78vh;
+	width:73vw;
 	border:none;
 	position:fixed;
 	border-radius:10px;
@@ -120,7 +120,8 @@ color:white;
 
 .msj-rta{
     float:right;background:#001111;text-align:right;
-	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;	
+	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;
+	word-wrap: break-word;
 }
 .msj{
     float:left;background:#101010;
@@ -128,11 +129,14 @@ color:white;
 }
 .msj-rta-mule{
     float:right;background:#00288b;text-align:right;
-	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;	
+	box-shadow: inset 0 4px 4px 0 grey, 0 1px 2px 0 grey;
+	word-wrap: break-word;
 }
 .msj-rta-devops{
     float:right;background:#224634;
 	box-shadow: inset 0px 4px 4px 0 grey, 0 1px 2px 0 grey;	
+	word-wrap: break-word;
+	margin-right:20px;
 }
 .i-circle-jarvis {
     background: brown;
@@ -269,7 +273,7 @@ display:flex;
 }  
 
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 5px;
 }
 
 /* Track */

@@ -85,11 +85,11 @@ function insertChat(who, text) {
     if (who == "local") {
 
         control = '<li style="width:100%;float:right;">' +
-            '<div class="msj-rta macro">' +
+            '<div class="msj-rta-devops macro">' +
             '<div class="text text-r">' +  
             '<p>' + text + '</p>' + 
             '<p><small>' + date + 
-            '</div>' + '</small>  </p>' + 
+            '</div>' + '</small>  </p>' +  '<span class="i-circle-devops">DO</span>' 
             '</li>';
     }
 	
@@ -217,11 +217,11 @@ function queryBot(text) {
 
         success: function(data) {
             displayPage(data.result.action);
-			insertChat("jarvis", data.result.fulfillment.speech);
+			setTimeout(insertChat("jarvis", data.result.fulfillment.speech),10000);
 			var msg = new SpeechSynthesisUtterance();
 			msg.text = data.result.fulfillment.speech;
 			speechSynthesis.speak(msg);
-			setTimeout(botToBot(data.result.action,data.result.fulfillment.speech),10000);
+			botToBot(data.result.action,data.result.fulfillment.speech);
         },
         error: function() {
 			var msg = new SpeechSynthesisUtterance();
@@ -241,6 +241,8 @@ function displayPage(action){
 	document.getElementById('black-mirror-frame').src = url;
 	document.getElementById('mirror-links').style.display="none";
 	}
+	else
+		document.getElementById('black-mirror-frame').src = "";
 }
 
 $("#closeOp").click(function(){
@@ -267,7 +269,7 @@ function botToBot(action,fulfillmentText) {
         }),
         success: function(data) {
         queryBot(data.result.fulfillment.speech)
-	    insertChat(bot, data.result.fulfillment.speech);
+	    setTimeout(insertChat(bot, data.result.fulfillment.speech),25000);
 	    var msg = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			msg.lang = "en-US";
