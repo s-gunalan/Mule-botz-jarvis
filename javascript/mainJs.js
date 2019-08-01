@@ -81,7 +81,7 @@ function updateRec() {
 function insertChat(who, text) {
     var control = "";
     var date = formatTime(new Date());
-
+	
     if (who == "local") {
 
         control = '<li style="width:100%;float:right;">' +
@@ -105,7 +105,7 @@ function insertChat(who, text) {
     }
 	
 	else if (who == "Mr_Mule") {
-
+	
         control = '<li style="width:100%;float:right;">' +
             '<div class="msj-rta-mule macro">' +
             '<div class="text text-r">' +  
@@ -116,21 +116,22 @@ function insertChat(who, text) {
     }
 	
 	else if (who == "DevOps") {
-
+	console.log(who);
         control = '<li style="width:100%;float:right;">' +
             '<div class="msj-rta-devops macro">' +
             '<div class="text text-r">' +  
             '<p>' + text + '</p>' + 
             '<p><small>' + date + 
-            '</div>' + '</small>  </p>' + '<span class="i-circle-devops">MB</span>'  + 
+            '</div>' + '</small>  </p>' + '<span class="i-circle-devops">DO</span>'  + 
             '</li>';
     }
     else {
-        control = '<li style="width:100%;float:right; ">' +
+    console.log(who);
+    control = '<li style="width:100%;float:right; ">' +
             '<div class="msj-rta-devops macro" >' +
             '<div class="text text-r">' + 
             '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' + '<span class="i-circle-others">DO</span>'
+            '<p><small>' + date + '</small></p>' + '<span class="i-circle-others">Others</span>'
             '</div>' +
             '</li>';
     }
