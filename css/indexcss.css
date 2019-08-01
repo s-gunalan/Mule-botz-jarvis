@@ -144,9 +144,10 @@ color:white;
 }
 
 .i-circle-mule {
-    background: radial-gradient(blue,black);
+    background: radial-gradient(white,white,black);
     border-radius: 50%;
 	width:40px;
+	color:black;
 	height:30px;
 	float:right;
 	text-align:center;
