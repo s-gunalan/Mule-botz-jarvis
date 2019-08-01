@@ -241,9 +241,10 @@ function displayPage(action){
 	document.getElementById('black-mirror-frame').src = url;
 	document.getElementById('mirror-links').style.display="none";
 	}
-	else
+	else{
 		document.getElementById('black-mirror-frame').src = "";
 		document.getElementById('mirror-links').style.display="block";
+	}
 }
 
 $("#closeOp").click(function(){
