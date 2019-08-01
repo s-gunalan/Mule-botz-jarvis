@@ -103,12 +103,11 @@ function insertChat(who, text) {
             '</li>';
     }
     else {
-        control = '<li style="width:100%;align:right;">' +
-            '<div class="msj macro">' +
-            '<div class="text text-l">' 
-            '<p><i>' +who +'</i>' + text + '</p>' +
+        control = '<li style="width:100%;float:right; background:blue;color:yellow;">' +
+            '<div class="msj-rta macro">' +
+            '<div class="text text-r">' +
+            '<p>' + text + '</p>' +
             '<p><small>' + date + '</small></p>' +
-            '</div>' +
             '</div>' +
             '</li>';
     }
@@ -193,26 +192,37 @@ function queryBot(text) {
         }),
 
         success: function(data) {
-            botToBot(data.result.action,data.result.fulfillment.speech);
-            insertChat("jarvis", data.result.fulfillment.speech);
+            displayPage(data.result.action);
+			insertChat("jarvis", data.result.fulfillment.speech);
 			var msg = new SpeechSynthesisUtterance();
-			var voices = window.speechSynthesis.getVoices();
-			msg.lang = "en-GB";
-			msg.voice = voices[3];
 			msg.text = data.result.fulfillment.speech;
 			speechSynthesis.speak(msg);
+			setTimeout(botToBot(data.result.action,data.result.fulfillment.speech),5000);
         },
         error: function() {
 			var msg = new SpeechSynthesisUtterance();
-			var voices = window.speechSynthesis.getVoices();
-			msg.lang = "en-GB";
-			msg.voice = voices[2];
 			msg.text="Sorry Jarvis has faced some issues! Please try again later";
 			speechSynthesis.speak(msg);
             insertChat("jarvis", "Sorry Jarvis has faced some issues! Please try again later");
         }
     });
 }
+
+function displayPage(action){
+	if(action.startsWith("load=")){
+	console.log(action);
+	var url=action.split("=")[1];
+	console.log(url);
+	$('#calendar').attr('src', url);
+	document.getElementById('black-mirror-frame').src = url;
+	document.getElementById('mirror-links').style.display="none";
+	}
+}
+
+$("#closeOp").click(function(){
+	document.getElementById('mirror-links').style.display="none";	
+	document.getElementById('black-mirror-frame').src = "";
+});
 
 function botToBot(action,fulfillmentText) {
     if(action.startsWith("contact."))
@@ -237,7 +247,7 @@ function botToBot(action,fulfillmentText) {
 	    var msg = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			msg.lang = "en-US";
-			msg.voice = voices[3];
+			msg.voice = voices[1];
 			msg.text = data.result.fulfillment.speech;
 			speechSynthesis.speak(msg);
             
@@ -247,10 +257,10 @@ function botToBot(action,fulfillmentText) {
 			var msg = new SpeechSynthesisUtterance();
 			var voices = window.speechSynthesis.getVoices();
 			msg.lang = "en-US";
-			msg.voice = voices[3];
+			msg.voice = voices[1];
 			msg.text = data.result.fulfillment.speech;
 			speechSynthesis.speak(msg);
-            setTimeout('', 10000);
+            
 			}
 		});
 }}
@@ -281,3 +291,4 @@ $(function () {
     setTimeout(nextBackground, 1500);
     body.css('background', backgrounds[0]);
 });
+

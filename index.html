@@ -11,13 +11,24 @@
 <img id="ai-logo" src="css/logos/adaptive_int.png"></img>
 <font style="letter-spacing:0.2em;font-size:60px;">&nbsp J   A    R    V    I    S</font><br><font face="tagline" style="letter-spacing:0.2em"><h3>Just A Rather Very Intelligent System</h3> <br>&nbsp&nbspA Chat of Things (C.o.T) Framework</font>
 </div>
-  
 <iframe class="black-mirror" id="black-mirror-frame" src='' style="display"></iframe>
+
+<div id="mirror-links" class="container">
+<div id="mulesoft" class="container"> 
+<button type="button" class="btn btn-danger btn-lg" id="dc" onclick="displayPage('load=https://anypoint.mulesoft.com')">Design Center</a></button>
+<button type="button" class="btn btn-danger btn-lg" id = "exg" onclick="displayPage('load=https://anypoint.mulesoft.com/exchange/')">Anypoint Exchange</button>
+<button type="button" class="btn btn-danger btn-lg" id= "amng" onclick="displayPage('load=https://anypoint.mulesoft.com/apimanager')">API Manager</button>
+</div>
+<div id="devops" class="container"> 
+<button type="button" class="btn btn-danger btn-lg" id="bb"><a href="https://bitbucket.org/adaptiveintegrationteam/">Bitbucket</a></button>
+<button type="button" class="btn btn-danger btn-lg" id="jenk" onclick="displayPage('load=https://jenkins.adaptivedevops.unileverservices.com/job/Adaptive%20Integration/')">Jenkins</button>
+</div>
+</div>
 <div class="frame" id="frame">
    <div class="panel panel-primary" style="z-index: 1000">
    <i><div id="chat-panel" class="panel-heading" >
    </div></i>
-  </div> 
+  </div>
     <div class="innerframe" style="display:none">
    <ul id="messages"></ul>
     <div id="message-box">
@@ -29,9 +40,10 @@
     </div>
    </div>
   </div>
+  <a id="closeOp" style="display:none">Close X</a>
 <div id="footer">© Unilever Ltd
 </div>
-  </body>
+</body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="javascript/mainJs.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
