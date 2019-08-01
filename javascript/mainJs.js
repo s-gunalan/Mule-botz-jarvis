@@ -85,11 +85,11 @@ function insertChat(who, text) {
     if (who == "local") {
 
         control = '<li style="width:100%;float:right;">' +
-            '<div class="msj-rta-devops macro">' +
+            '<div class="msj-rta macro">' +
             '<div class="text text-r">' +  
             '<p>' + text + '</p>' + 
             '<p><small>' + date + 
-            '</div>' + '</small>  </p>' +  '<span class="i-circle-devops">DO</span>' 
+            '</div>' + '</small></p>' 
             '</li>';
     }
 	
