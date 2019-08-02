@@ -5,7 +5,7 @@ var SESSIONID = generateUUID();
 var accessToken = "bb75f2f1492349c686196d714d9dce22";
 var Mr_Mule = "6ec8e22772604bbcb3d6e420d0e1edfa";
 var DevOps = "e9e8ba482ba44deb89fcbbb5dccc6dda";
-
+var Nat = "24d5e9c4be274d5db0377f940adb93b8";
 var baseUrl = "https://api.api.ai/v1/";
 var apihost = "";
 var basepath = "home";
@@ -85,11 +85,11 @@ function insertChat(who, text) {
     if (who == "local") {
 
         control = '<li style="width:100%;float:right;">' +
-            '<div class="msj-rta-devops macro">' +
+            '<div class="msj-rta macro">' +
             '<div class="text text-r">' +  
             '<p>' + text + '</p>' + 
             '<p><small>' + date + 
-            '</div>' + '</small>  </p>' +  '<span class="i-circle-devops">DO</span>' 
+            '</div>' + '</small></p>' 
             '</li>';
     }
 	
@@ -131,8 +131,8 @@ function insertChat(who, text) {
             '<div class="msj-rta-devops macro" >' +
             '<div class="text text-r">' + 
             '<p>' + text + '</p>' +
-            '<p><small>' + date + '</small></p>' + '<span class="i-circle-others">Others</span>'
-            '</div>' +
+            '<p><small>' + date 
+            '</div>' + '</small></p>' + '<span class="i-circle-others">N</span>' + 
             '</li>';
     }
     $("#messages").append(control);
@@ -241,8 +241,10 @@ function displayPage(action){
 	document.getElementById('black-mirror-frame').src = url;
 	document.getElementById('mirror-links').style.display="none";
 	}
-	else
+	else{
 		document.getElementById('black-mirror-frame').src = "";
+		document.getElementById('mirror-links').style.display="block";
+	}
 }
 
 $("#closeOp").click(function(){
