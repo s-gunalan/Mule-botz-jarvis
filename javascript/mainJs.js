@@ -138,6 +138,12 @@ function insertChat(who, text) {
     $("#messages").append(control);
     var objDiv = document.getElementById("messages");
     objDiv.scrollTop = objDiv.scrollHeight;
+	var msg = new SpeechSynthesisUtterance();
+	var voices = window.speechSynthesis.getVoices();
+	msg.lang = "en-US";
+	msg.voice = voices[1];
+	msg.text = text;
+	speechSynthesis.speak(msg);
 }
 
 
