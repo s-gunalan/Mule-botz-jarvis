@@ -201,35 +201,19 @@ queryBot(text);
 resetChat();
 
 function queryBot(text) {
-    $.ajax({
-        type: "POST",
-        url: baseUrl + "query?v=20150910",
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        headers: {
-            "Authorization": "Bearer " + accessToken
-        },
-        data: JSON.stringify({
-            query: text,
-            lang: "en",
-            sessionId: SESSIONID
-        }),
-
-        success: function(data) {
-            displayPage(data.result.action);
-			setTimeout(insertChat("jarvis", data.result.fulfillment.speech),10000);
-			var msg = new SpeechSynthesisUtterance();
-			msg.text = data.result.fulfillment.speech;
-			speechSynthesis.speak(msg);
-			botToBot(data.result.action,data.result.fulfillment.speech);
-        },
-        error: function() {
-			var msg = new SpeechSynthesisUtterance();
-			msg.text="Sorry Jarvis has faced some issues! Please try again later";
-			speechSynthesis.speak(msg);
-            insertChat("jarvis", "Sorry Jarvis has faced some issues! Please try again later");
-        }
-    });
+insertChat("jarvis", "Hello, I am JARVIS. How May i Help you?");
+	if(text.startsWith("create"){
+	insertChat("jarvis", "Sure Sir. Let me work with my Agents to create API for you.");
+	insertChat("jarvis", "Hey Mr. Mule, Please create the API with the specified operations in Mulesoft Platform and confirm to us");
+	insertChat("Mr_Mule", "Hi Jarvis. Sure. I am creating the API in Mulesoft. Meanwhile can you work with DevOps Agent to create the Deployment pipelines and code repository for us?");
+	insertChat("jarvis", "Sure. I will work on it.");
+	insertChat("jarvis", "Hey DevOps Agent, please create code repo for orders API with mulesoft template and let us know.");
+	insertChat("DevOps", "Hi Jarvis. Thank for your request. Getting it done for you shortly while you wait.");
+	insertChat("Mr_Mule", "Hi Jarvis. I have created the API Specification, Policies and Contracts in Mulesoft platform. Here is the API ID: 12345");
+	insertChat("DevOps", "Hey Mule. Thanks for the API ID. Hi Jarvis. I have created the code repository, boilerplate code for mulesoft application and committed to the code base. Let me know if we're good to deploy with the provided API ID");		
+	insertChat("jarvis", "Hi Both. Please go ahead and deploy");
+	insertChat("jarvis", "Hi Sir. API has been created and deployed to Mulesoft Anypoint Platform. Pls find the following code repository: github.com/<reponame>");
+	}
 }
 
 function displayPage(action){
