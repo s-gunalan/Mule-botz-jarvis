@@ -201,7 +201,6 @@ queryBot(text);
 resetChat();
 
 function queryBot(text) {
-insertChat("jarvis", "Hello, I am JARVIS. How May i Help you?");
 	if(text.startsWith("create")){
 	insertChat("jarvis", "Sure Sir. Let me work with my Agents to create API for you.");
 	insertChat("jarvis", "Hey Mr. Mule, Please create the API with the specified operations in Mulesoft Platform and confirm to us");
@@ -213,6 +212,8 @@ insertChat("jarvis", "Hello, I am JARVIS. How May i Help you?");
 	insertChat("DevOps", "Hey Mule. Thanks for the API ID. Hi Jarvis. I have created the code repository, boilerplate code for mulesoft application and committed to the code base. Let me know if we're good to deploy with the provided API ID");		
 	insertChat("jarvis", "Hi Both. Please go ahead and deploy");
 	insertChat("jarvis", "Hi Sir. API has been created and deployed to Mulesoft Anypoint Platform. Pls find the following code repository: github.com/<reponame>");
+	} else {
+		insertChat("jarvis", "Hello, I am JARVIS. How May i Help you?");
 	}
 }
 
