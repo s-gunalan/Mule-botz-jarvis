@@ -202,7 +202,7 @@ resetChat();
 
 function queryBot(text) {
 insertChat("jarvis", "Hello, I am JARVIS. How May i Help you?");
-	if(text.startsWith("create"){
+	if(text.startsWith("create")){
 	insertChat("jarvis", "Sure Sir. Let me work with my Agents to create API for you.");
 	insertChat("jarvis", "Hey Mr. Mule, Please create the API with the specified operations in Mulesoft Platform and confirm to us");
 	insertChat("Mr_Mule", "Hi Jarvis. Sure. I am creating the API in Mulesoft. Meanwhile can you work with DevOps Agent to create the Deployment pipelines and code repository for us?");
